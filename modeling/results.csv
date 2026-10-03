@@ -1,0 +1,21 @@
+model,target,family,n,MAE,RMSE,MAE_std,RMSE_std,n_clf,n_nc,F1_nc,recall_nc
+Baseline (mean),yield_strength_MPa,all,620,72.5700,94.4083,6.9118,8.3767,619,102,0.0000,0.0000
+Baseline (mean),yield_strength_MPa,C-Mn,552,68.2452,85.6669,7.3116,5.5879,552,102,0.0000,0.0000
+Baseline (mean),yield_strength_MPa,CrMo2,30,65.1537,94.5756,43.9168,50.2728,29,0,0.0000,0.0000
+Baseline (mean),yield_strength_MPa,CrMo91,38,141.2486,178.1962,50.2542,52.5219,38,0,0.0000,0.0000
+Baseline (mean),uts_MPa,all,596,73.4451,92.1934,6.5884,10.6579,595,198,0.0000,0.0000
+Baseline (mean),uts_MPa,C-Mn,531,68.1345,83.1294,6.9412,6.1473,531,198,0.0000,0.0000
+Baseline (mean),uts_MPa,CrMo2,34,80.8486,111.5326,47.3513,53.6145,33,0,0.0000,0.0000
+Baseline (mean),uts_MPa,CrMo91,31,156.2901,177.1968,25.7945,42.6028,31,0,0.0000,0.0000
+Baseline (mean),elongation_pct,all,558,4.0092,4.8459,0.2485,0.1951,557,48,0.0000,0.0000
+Baseline (mean),elongation_pct,C-Mn,497,3.7625,4.5522,0.2961,0.2388,497,37,0.0000,0.0000
+Baseline (mean),elongation_pct,CrMo2,30,5.1869,6.0118,0.7663,0.9592,29,5,0.0000,0.0000
+Baseline (mean),elongation_pct,CrMo91,31,6.8251,7.4483,1.5425,1.3851,31,6,0.0000,0.0000
+Baseline (mean),charpy_toughness_J,all,723,39.8898,51.7299,2.8294,3.8535,315,29,0.0000,0.0000
+Baseline (mean),charpy_toughness_J,C-Mn,613,35.7831,47.0677,0.8793,1.0816,269,24,0.0000,0.0000
+Baseline (mean),charpy_toughness_J,CrMo2,77,71.2623,80.3474,23.2901,22.4140,34,0,0.0000,0.0000
+Baseline (mean),charpy_toughness_J,CrMo91,33,42.9723,49.1209,6.4876,7.4411,12,5,0.0000,0.0000
+Baseline (mean),label,all,,,,,,175,83,0.0000,0.0000
+Baseline (mean),label,C-Mn,,,,,,161,79,0.0000,0.0000
+Baseline (mean),label,CrMo2,,,,,,8,1,0.0000,0.0000
+Baseline (mean),label,CrMo91,,,,,,6,3,0.0000,0.0000
