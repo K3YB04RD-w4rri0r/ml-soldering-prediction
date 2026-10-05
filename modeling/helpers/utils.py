@@ -9,6 +9,10 @@ can be compared in one table (results.csv):
   family, with the same folds for every target and every person;
 - MAE and RMSE per target, then F1 and recall on the non-conforming welds once
   the thresholds of definition_bonne_soudure.md are applied to the predictions.
+
+The direct classifiers of the label (1D notebooks) are trained on the labelled
+weld deposits, one row per deposit, with the same folds, and give the same
+"label" rows of the results table (evaluate_label).
 """
 from pathlib import Path
 
@@ -34,6 +38,12 @@ PROCESS_COLS = [
     "weld_type_SA", "weld_type_SAA", "weld_type_TSA",
 ]
 INPUT_COLS = CHEM_COLS + PROCESS_COLS
+
+# Inputs of the direct classifiers, one row per deposit. The PWHT can change between the rows
+# of a deposit, it is replaced by the heat treatment with the lowest and the highest temperature.
+PWHT_COLS = ["pwht_temp_C", "pwht_time_h"]
+PWHT_DEPOSIT_COLS = ["pwht_temp_C_low", "pwht_time_h_low", "pwht_temp_C_high", "pwht_time_h_high"]
+DEPOSIT_COLS = [c for c in INPUT_COLS if c not in PWHT_COLS] + PWHT_DEPOSIT_COLS
 
 TARGETS = ["yield_strength_MPa", "uts_MPa", "elongation_pct", "charpy_toughness_J"]
 CHARPY = "charpy_toughness_J"
@@ -276,6 +286,94 @@ def evaluate(name, models, df):
 
 def _format(results):
     return results.reindex(columns=RESULT_COLS).astype({"n": "Int64", "n_clf": "Int64", "n_nc": "Int64"})
+
+
+def deposit_data(df):
+    """One row per labelled weld deposit: its inputs (DEPOSIT_COLS), `fold`, `family` and `true_nc`.
+
+    `true_nc` is the label of deposit_labels (1 = non-conforming). The composition and
+    the welding parameters are the same on every row of a deposit (input_group), only the
+    PWHT can change, for example an as-welded and a heat treated state. The label holds
+    for all of them, so the deposit is described by its heat treatment with the lowest
+    temperature (`_low`) and its heat treatment with the highest one (`_high`), which are
+    equal when the deposit has a single state.
+    """
+    crit = true_criteria(df)
+    labels = deposit_labels(df, crit, crit)
+    groups = df.groupby("input_group")
+    pwht = df.sort_values(PWHT_COLS).groupby("input_group")[PWHT_COLS]
+    data = pd.concat([
+        groups[[c for c in INPUT_COLS if c not in PWHT_COLS]].first(),
+        pwht.first().add_suffix("_low"),
+        pwht.last().add_suffix("_high"),
+        groups["fold"].first(),
+    ], axis=1)
+    return data.loc[labels.index, DEPOSIT_COLS + ["fold"]].join(labels[["family", "true_nc"]])
+
+
+def get_deposit_xy(df):
+    """X, y and the cross-validation splitter of the direct classification, on the labelled deposits.
+
+    y is 1 for a non-conforming deposit. The splitter uses the fold of each deposit, the
+    same as in evaluate, pass it as `cv` to GridSearchCV or cross_val_score.
+    """
+    data = deposit_data(df)
+    return data[DEPOSIT_COLS], data["true_nc"], PredefinedSplit(data["fold"])
+
+
+def oof_predict_label(model, df):
+    """Out-of-fold predicted label of each labelled deposit (`pred_nc`, 1 = non-conforming).
+
+    `score` is the out-of-fold score of the non-conforming class: the probability of
+    predict_proba, or decision_function for a model without probabilities (SVM).
+    """
+    X, y, cv = get_deposit_xy(df)
+    out = pd.DataFrame(np.nan, index=X.index, columns=["pred_nc", "score"])
+    for train_idx, val_idx in cv.split():
+        pipe = build_pipeline(model).fit(X.iloc[train_idx], y.iloc[train_idx])
+        X_val = X.iloc[val_idx]
+        out.iloc[val_idx, 0] = pipe.predict(X_val)
+        out.iloc[val_idx, 1] = pipe.predict_proba(X_val)[:, 1] if hasattr(pipe, "predict_proba") else pipe.decision_function(X_val)
+    return out.astype({"pred_nc": int})
+
+
+def nested_oof_predict_label(search, df):
+    """Out-of-fold predicted label when the grid search is redone without the validation fold.
+
+    `search` is a GridSearchCV of a classifier of the label, its `cv` is replaced. For each
+    fold, the search is fitted on the 4 other folds, with these 4 folds as inner folds, and
+    its best model predicts the fold. evaluate_label scores the hyperparameters chosen on the
+    same 5 folds, which is a little optimistic, this nested cross-validation is not.
+    Returns the predicted labels and the hyperparameters chosen for each fold.
+    """
+    X, y, cv = get_deposit_xy(df)
+    fold = cv.test_fold
+    pred = pd.Series(0, index=X.index, name="pred_nc")
+    params = []
+    for k in range(N_FOLDS):
+        inner = clone(search).set_params(cv=PredefinedSplit(fold[fold != k]))
+        inner.fit(X[fold != k], y[fold != k])
+        pred[fold == k] = inner.predict(X[fold == k])
+        params.append({name.removeprefix("model__"): value for name, value in inner.best_params_.items()})
+    return pred, pd.DataFrame(params).rename_axis("fold")
+
+
+def evaluate_label(name, model, df):
+    """Cross-validate a classifier of the label and return its rows of the results table.
+
+    The same rows as the "label" rows of evaluate: F1 and recall on the non-conforming
+    deposits, on all the labelled deposits and per family. The regression columns are empty.
+    """
+    data = deposit_data(df)
+    pred = oof_predict_label(model, df)
+    rows = []
+    for family in REPORT_FAMILIES:
+        mask = _family_mask(data["family"], family)
+        rows.append({
+            "model": name, "target": "label", "family": family,
+            **_classification_metrics(data.loc[mask, "true_nc"], pred.loc[mask, "pred_nc"]),
+        })
+    return _format(pd.DataFrame(rows))
 
 
 def save_results(results, path=RESULTS_PATH):
