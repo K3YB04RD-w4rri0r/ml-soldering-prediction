@@ -2,5 +2,6 @@ todo.pdf
 .vscode
 missing.md
 __pycache__/
-
+modeling/results.csv
 TP_notebook/
+AGENTS.md
