@@ -1,181 +1,181 @@
-model,target,family,n,MAE,RMSE,MAE_std,RMSE_std,n_clf,n_nc,F1_nc,recall_nc,precision_good
-AdaBoost Tuned,yield_strength_MPa,all,620,43.7947,57.8942,3.2775,6.4912,619,102,0.0194,0.0098,0.8366
-AdaBoost Tuned,yield_strength_MPa,C-Mn,552,42.0135,52.7686,2.6124,3.0954,552,102,0.0194,0.0098,0.8167
-AdaBoost Tuned,yield_strength_MPa,CrMo2,30,53.3342,81.6422,30.7116,42.1123,29,0,0.0000,0.0000,
-AdaBoost Tuned,yield_strength_MPa,CrMo91,38,62.1388,94.7376,33.8128,52.0527,38,0,0.0000,0.0000,
-AdaBoost Tuned,uts_MPa,all,596,40.2143,51.4968,3.0389,6.8814,595,198,0.5793,0.4242,0.7734
-AdaBoost Tuned,uts_MPa,C-Mn,531,39.1494,47.2316,1.5066,2.1237,531,198,0.5793,0.4242,0.7403
-AdaBoost Tuned,uts_MPa,CrMo2,34,51.3430,78.8325,31.0420,38.5544,33,0,0.0000,0.0000,
-AdaBoost Tuned,uts_MPa,CrMo91,31,46.2498,77.1846,16.2918,36.5053,31,0,0.0000,0.0000,
-AdaBoost Tuned,elongation_pct,all,558,2.4142,3.0266,0.1302,0.1265,557,48,0.1818,0.1042,0.9218
-AdaBoost Tuned,elongation_pct,C-Mn,497,2.4351,3.0453,0.1902,0.1950,497,37,0.1860,0.1081,0.9328
-AdaBoost Tuned,elongation_pct,CrMo2,30,2.4993,3.2101,0.8125,1.0289,29,5,0.0000,0.0000,
-AdaBoost Tuned,elongation_pct,CrMo91,31,1.9974,2.4975,0.5990,0.7916,31,6,0.2857,0.1667,0.8333
-AdaBoost Tuned,charpy_toughness_J,all,723,27.3719,35.7354,3.2891,4.5335,315,29,0.0000,0.0000,
-AdaBoost Tuned,charpy_toughness_J,C-Mn,613,24.4048,31.5417,2.3733,2.4551,269,24,0.0000,0.0000,
-AdaBoost Tuned,charpy_toughness_J,CrMo2,77,51.3175,60.5842,17.7483,20.5043,34,0,0.0000,0.0000,
-AdaBoost Tuned,charpy_toughness_J,CrMo91,33,26.6156,30.5505,4.1957,3.8530,12,5,0.0000,0.0000,
-AdaBoost Tuned,label,all,,,,,,175,83,0.3061,0.1807,0.5750
-AdaBoost Tuned,label,C-Mn,,,,,,161,79,0.3191,0.1899,0.5616
-AdaBoost Tuned,label,CrMo2,,,,,,8,1,0.0000,0.0000,
-AdaBoost Tuned,label,CrMo91,,,,,,6,3,0.0000,0.0000,
-Bagging,yield_strength_MPa,all,620,35.2422,49.3999,3.7728,6.8220,619,102,0.6784,0.5686,0.9200
-Bagging,yield_strength_MPa,C-Mn,552,33.4909,44.8853,2.2463,4.5715,552,102,0.6784,0.5686,0.9089
-Bagging,yield_strength_MPa,CrMo2,30,55.3819,82.0406,35.4153,46.4081,29,0,0.0000,0.0000,
-Bagging,yield_strength_MPa,CrMo91,38,44.7820,72.3640,21.9364,36.2268,38,0,0.0000,0.0000,
-Bagging,uts_MPa,all,596,30.8574,44.4491,3.5159,8.4676,595,198,0.6728,0.5556,0.8112
-Bagging,uts_MPa,C-Mn,531,29.2594,39.5995,1.5872,3.4520,531,198,0.6728,0.5556,0.7811
-Bagging,uts_MPa,CrMo2,34,50.1333,77.4716,27.8672,41.7901,33,0,0.0000,0.0000,
-Bagging,uts_MPa,CrMo91,31,37.0880,67.3932,19.0700,39.2626,31,0,0.0000,0.0000,
-Bagging,elongation_pct,all,558,1.9483,2.5117,0.1471,0.2252,557,48,0.6234,0.5000,0.9545
-Bagging,elongation_pct,C-Mn,497,1.9448,2.4974,0.1589,0.2448,497,37,0.6667,0.5676,0.9660
-Bagging,elongation_pct,CrMo2,30,2.3674,3.0026,0.7101,0.9364,29,5,0.0000,0.0000,
-Bagging,elongation_pct,CrMo91,31,1.5989,2.1988,0.7519,1.0277,31,6,0.6667,0.5000,0.8929
-Bagging,charpy_toughness_J,all,723,19.1077,28.1598,2.8476,4.3602,315,29,0.1714,0.1034,0.9159
-Bagging,charpy_toughness_J,C-Mn,613,16.0767,23.3378,1.8619,2.1904,269,24,0.2000,0.1250,0.9202
-Bagging,charpy_toughness_J,CrMo2,77,44.4288,54.2131,15.8599,15.9174,34,0,0.0000,0.0000,
-Bagging,charpy_toughness_J,CrMo91,33,16.3293,19.9560,4.3445,5.9733,12,5,0.0000,0.0000,
-Bagging,label,all,,,,,,175,83,0.8108,0.7229,0.7909
-Bagging,label,C-Mn,,,,,,161,79,0.8252,0.7468,0.7938
-Bagging,label,CrMo2,,,,,,8,1,0.0000,0.0000,
-Bagging,label,CrMo91,,,,,,6,3,0.5000,0.3333,0.6000
-Baseline (mean),yield_strength_MPa,all,620,72.5700,94.4083,6.9118,8.3767,619,102,0.0000,0.0000,0.8352
-Baseline (mean),yield_strength_MPa,C-Mn,552,68.2452,85.6669,7.3116,5.5879,552,102,0.0000,0.0000,0.8152
-Baseline (mean),yield_strength_MPa,CrMo2,30,65.1537,94.5756,43.9168,50.2728,29,0,0.0000,0.0000,1.0000
-Baseline (mean),yield_strength_MPa,CrMo91,38,141.2486,178.1962,50.2542,52.5219,38,0,0.0000,0.0000,1.0000
-Baseline (mean),uts_MPa,all,596,73.4451,92.1934,6.5884,10.6579,595,198,0.0000,0.0000,0.6672
-Baseline (mean),uts_MPa,C-Mn,531,68.1345,83.1294,6.9412,6.1473,531,198,0.0000,0.0000,0.6271
-Baseline (mean),uts_MPa,CrMo2,34,80.8486,111.5326,47.3513,53.6145,33,0,0.0000,0.0000,1.0000
-Baseline (mean),uts_MPa,CrMo91,31,156.2901,177.1968,25.7945,42.6028,31,0,0.0000,0.0000,1.0000
-Baseline (mean),elongation_pct,all,558,4.0092,4.8459,0.2485,0.1951,557,48,0.0000,0.0000,0.9138
-Baseline (mean),elongation_pct,C-Mn,497,3.7625,4.5522,0.2961,0.2388,497,37,0.0000,0.0000,0.9256
-Baseline (mean),elongation_pct,CrMo2,30,5.1869,6.0118,0.7663,0.9592,29,5,0.0000,0.0000,0.8276
-Baseline (mean),elongation_pct,CrMo91,31,6.8251,7.4483,1.5425,1.3851,31,6,0.0000,0.0000,0.8065
-Baseline (mean),charpy_toughness_J,all,723,39.8898,51.7299,2.8294,3.8535,315,29,0.0000,0.0000,0.9079
-Baseline (mean),charpy_toughness_J,C-Mn,613,35.7831,47.0677,0.8793,1.0816,269,24,0.0000,0.0000,0.9108
-Baseline (mean),charpy_toughness_J,CrMo2,77,71.2623,80.3474,23.2901,22.4140,34,0,0.0000,0.0000,1.0000
-Baseline (mean),charpy_toughness_J,CrMo91,33,42.9723,49.1209,6.4876,7.4411,12,5,0.0000,0.0000,0.5833
-Baseline (mean),label,all,,,,,,175,83,0.0000,0.0000,0.5257
-Baseline (mean),label,C-Mn,,,,,,161,79,0.0000,0.0000,0.5093
-Baseline (mean),label,CrMo2,,,,,,8,1,0.0000,0.0000,0.8750
-Baseline (mean),label,CrMo91,,,,,,6,3,0.0000,0.0000,0.5000
-Extra-Trees,yield_strength_MPa,all,620,29.0767,42.4853,2.7953,7.6437,619,102,0.7811,0.6471,0.9348
-Extra-Trees,yield_strength_MPa,C-Mn,552,27.0808,36.8705,1.6292,3.9476,552,102,0.7811,0.6471,0.9258
-Extra-Trees,yield_strength_MPa,CrMo2,30,44.7174,75.6869,39.8741,50.9458,29,0,0.0000,0.0000,1.0000
-Extra-Trees,yield_strength_MPa,CrMo91,38,45.7218,71.9717,18.5704,32.8402,38,0,0.0000,0.0000,1.0000
-Extra-Trees,uts_MPa,all,596,25.2362,38.8386,3.2438,9.4624,595,198,0.7378,0.6111,0.8344
-Extra-Trees,uts_MPa,C-Mn,531,23.1240,31.7839,1.7905,2.7847,531,198,0.7378,0.6111,0.8080
-Extra-Trees,uts_MPa,CrMo2,34,45.7402,79.4896,34.5468,52.2833,33,0,0.0000,0.0000,1.0000
-Extra-Trees,uts_MPa,CrMo91,31,38.9270,69.0419,18.4736,39.3577,31,0,0.0000,0.0000,1.0000
-Extra-Trees,elongation_pct,all,558,1.7850,2.3563,0.1746,0.2593,557,48,0.7250,0.6042,0.9638
-Extra-Trees,elongation_pct,C-Mn,497,1.7594,2.2856,0.1096,0.1240,497,37,0.7500,0.6486,0.9723
-Extra-Trees,elongation_pct,CrMo2,30,2.5987,3.5836,0.9188,1.3828,29,5,0.0000,0.0000,0.8276
-Extra-Trees,elongation_pct,CrMo91,31,1.4087,1.9383,0.6146,0.8204,31,6,0.9091,0.8333,0.9615
-Extra-Trees,charpy_toughness_J,all,723,17.3670,27.7069,2.8468,5.0882,315,29,0.2703,0.1724,0.9218
-Extra-Trees,charpy_toughness_J,C-Mn,613,13.8747,21.4484,0.6229,1.2438,269,24,0.0714,0.0417,0.9132
-Extra-Trees,charpy_toughness_J,CrMo2,77,46.3021,58.0455,24.5285,22.4154,34,0,0.0000,0.0000,1.0000
-Extra-Trees,charpy_toughness_J,CrMo91,33,14.7232,20.2962,8.5512,10.0240,12,5,0.8889,0.8000,0.8750
-Extra-Trees,label,all,,,,,,175,83,0.8392,0.7229,0.8000
-Extra-Trees,label,C-Mn,,,,,,161,79,0.8467,0.7342,0.7961
-Extra-Trees,label,CrMo2,,,,,,8,1,0.0000,0.0000,0.8750
-Extra-Trees,label,CrMo91,,,,,,6,3,0.8000,0.6667,0.7500
-Gradient Boosting Tuned,yield_strength_MPa,all,620,28.6248,41.5338,2.2545,6.4211,619,102,0.8043,0.7255,0.9479
-Gradient Boosting Tuned,yield_strength_MPa,C-Mn,552,26.8937,37.4683,0.9620,3.0697,552,102,0.8043,0.7255,0.9404
-Gradient Boosting Tuned,yield_strength_MPa,CrMo2,30,45.7327,71.3274,27.0977,33.8383,29,0,0.0000,0.0000,1.0000
-Gradient Boosting Tuned,yield_strength_MPa,CrMo91,38,40.2658,61.1232,19.6650,31.5820,38,0,0.0000,0.0000,1.0000
-Gradient Boosting Tuned,uts_MPa,all,596,25.2797,40.8284,4.2293,10.7642,595,198,0.7630,0.6667,0.8523
-Gradient Boosting Tuned,uts_MPa,C-Mn,531,23.2244,33.3152,2.3026,4.5677,531,198,0.7630,0.6667,0.8277
-Gradient Boosting Tuned,uts_MPa,CrMo2,34,40.7059,77.4275,30.8488,47.9498,33,0,0.0000,0.0000,1.0000
-Gradient Boosting Tuned,uts_MPa,CrMo91,31,43.5652,80.3858,26.9601,49.3996,31,0,0.0000,0.0000,1.0000
-Gradient Boosting Tuned,elongation_pct,all,558,1.9512,2.5538,0.2085,0.2453,557,48,0.5854,0.5000,0.9541
-Gradient Boosting Tuned,elongation_pct,C-Mn,497,1.9367,2.5282,0.2156,0.2604,497,37,0.6061,0.5405,0.9637
-Gradient Boosting Tuned,elongation_pct,CrMo2,30,2.5411,3.2637,0.6776,0.9551,29,5,0.0000,0.0000,0.8276
-Gradient Boosting Tuned,elongation_pct,CrMo91,31,1.6140,2.1471,0.7549,0.9491,31,6,0.7273,0.6667,0.9231
-Gradient Boosting Tuned,charpy_toughness_J,all,723,19.6093,28.7862,3.3133,5.3998,315,29,0.3000,0.2069,0.9243
-Gradient Boosting Tuned,charpy_toughness_J,C-Mn,613,16.2422,22.9406,2.0101,2.3844,269,24,0.1379,0.0833,0.9167
-Gradient Boosting Tuned,charpy_toughness_J,CrMo2,77,47.3240,57.7146,22.1264,20.4591,34,0,0.0000,0.0000,1.0000
-Gradient Boosting Tuned,charpy_toughness_J,CrMo91,33,17.4872,24.6327,8.4484,11.0538,12,5,0.8889,0.8000,0.8750
-Gradient Boosting Tuned,label,all,,,,,,175,83,0.8590,0.8072,0.8431
-Gradient Boosting Tuned,label,C-Mn,,,,,,161,79,0.8649,0.8101,0.8370
-Gradient Boosting Tuned,label,CrMo2,,,,,,8,1,1.0000,1.0000,1.0000
-Gradient Boosting Tuned,label,CrMo91,,,,,,6,3,0.6667,0.6667,0.6667
-HistGradientBoosting Tuned,yield_strength_MPa,all,620,30.8290,45.1285,3.9886,8.0586,619,102,0.7872,0.7255,0.9475
-HistGradientBoosting Tuned,yield_strength_MPa,C-Mn,552,27.9401,38.1574,2.1170,3.1824,552,102,0.7872,0.7255,0.9399
-HistGradientBoosting Tuned,yield_strength_MPa,CrMo2,30,52.3971,76.5764,37.2567,41.5372,29,0,0.0000,0.0000,
-HistGradientBoosting Tuned,yield_strength_MPa,CrMo91,38,55.7656,86.3072,29.0354,42.8665,38,0,0.0000,0.0000,
-HistGradientBoosting Tuned,uts_MPa,all,596,26.5784,40.1272,3.1742,8.6362,595,198,0.7701,0.7020,0.8634
-HistGradientBoosting Tuned,uts_MPa,C-Mn,531,24.6698,33.3418,1.3549,2.3037,531,198,0.7701,0.7020,0.8397
-HistGradientBoosting Tuned,uts_MPa,CrMo2,34,45.1474,73.9712,29.9100,42.1268,33,0,0.0000,0.0000,
-HistGradientBoosting Tuned,uts_MPa,CrMo91,31,38.9054,76.9033,17.1289,44.7573,31,0,0.0000,0.0000,
-HistGradientBoosting Tuned,elongation_pct,all,558,1.9277,2.5122,0.1474,0.2084,557,48,0.5897,0.4792,0.9526
-HistGradientBoosting Tuned,elongation_pct,C-Mn,497,1.9126,2.4873,0.1651,0.2353,497,37,0.6562,0.5676,0.9660
-HistGradientBoosting Tuned,elongation_pct,CrMo2,30,2.6213,3.2125,0.5544,0.6154,29,5,0.0000,0.0000,
-HistGradientBoosting Tuned,elongation_pct,CrMo91,31,1.4987,2.1034,0.5861,0.9059,31,6,0.4444,0.3333,0.8571
-HistGradientBoosting Tuned,charpy_toughness_J,all,723,18.4703,27.5908,2.8453,5.4091,315,29,0.5333,0.4138,0.9431
-HistGradientBoosting Tuned,charpy_toughness_J,C-Mn,613,15.3988,21.8950,1.3990,2.1211,269,24,0.4865,0.3750,0.9414
-HistGradientBoosting Tuned,charpy_toughness_J,CrMo2,77,44.3325,55.7299,22.5990,21.0655,34,0,0.0000,0.0000,
-HistGradientBoosting Tuned,charpy_toughness_J,CrMo91,33,15.1817,22.9426,10.2525,15.1889,12,5,0.7500,0.6000,0.7778
-HistGradientBoosting Tuned,label,all,,,,,,175,83,0.8302,0.7952,0.8283
-HistGradientBoosting Tuned,label,C-Mn,,,,,,161,79,0.8571,0.8354,0.8488
-HistGradientBoosting Tuned,label,CrMo2,,,,,,8,1,0.0000,0.0000,
-HistGradientBoosting Tuned,label,CrMo91,,,,,,6,3,0.0000,0.0000,
-Naive Bayes classifier,label,all,,,,,,175,83,0.6994,0.6867,0.7263
-Naive Bayes classifier,label,C-Mn,,,,,,161,79,0.7143,0.6962,0.7209
-Naive Bayes classifier,label,CrMo2,,,,,,8,1,0.0000,0.0000,0.8750
-Naive Bayes classifier,label,CrMo91,,,,,,6,3,0.5000,0.6667,0.0000
-Pruned CART,yield_strength_MPa,all,620,48.2375,66.2208,5.3795,8.9208,619,102,0.5951,0.5980,0.9205
-Pruned CART,yield_strength_MPa,C-Mn,552,46.6474,63.2966,5.6317,8.1769,552,102,0.5951,0.5980,0.9087
-Pruned CART,yield_strength_MPa,CrMo2,30,93.1194,112.0610,33.7187,39.8285,29,0,0.0000,0.0000,
-Pruned CART,yield_strength_MPa,CrMo91,38,35.9033,58.6072,17.8872,27.5261,38,0,0.0000,0.0000,
-Pruned CART,uts_MPa,all,596,41.7850,59.9737,5.5654,9.9831,595,198,0.6394,0.6313,0.8184
-Pruned CART,uts_MPa,C-Mn,531,40.3095,55.7337,5.5728,7.8749,531,198,0.6394,0.6313,0.7840
-Pruned CART,uts_MPa,CrMo2,34,61.3745,93.0490,30.7590,43.7041,33,0,0.0000,0.0000,
-Pruned CART,uts_MPa,CrMo91,31,45.5747,80.3072,21.6355,41.7402,31,0,0.0000,0.0000,
-Pruned CART,elongation_pct,all,558,2.6030,3.3217,0.1122,0.1822,557,48,0.4615,0.5000,0.9521
-Pruned CART,elongation_pct,C-Mn,497,2.6051,3.3347,0.1370,0.2100,497,37,0.5055,0.6216,0.9684
-Pruned CART,elongation_pct,CrMo2,30,2.6603,3.1742,0.5563,0.6157,29,5,0.0000,0.0000,
-Pruned CART,elongation_pct,CrMo91,31,2.5144,3.2511,0.7831,1.2148,31,6,0.2500,0.1667,0.8276
-Pruned CART,charpy_toughness_J,all,723,18.8707,32.4594,3.5619,5.8135,315,29,0.5217,0.6207,0.9600
-Pruned CART,charpy_toughness_J,C-Mn,613,16.1793,29.5696,2.3750,3.8581,269,24,0.5455,0.6250,0.9622
-Pruned CART,charpy_toughness_J,CrMo2,77,40.8082,52.0980,14.4951,17.2943,34,0,0.0000,0.0000,
-Pruned CART,charpy_toughness_J,CrMo91,33,17.6779,22.5528,4.2675,6.1452,12,5,0.6000,0.6000,0.7143
-Pruned CART,label,all,,,,,,175,83,0.7657,0.8072,0.8072
-Pruned CART,label,C-Mn,,,,,,161,79,0.7811,0.8354,0.8169
-Pruned CART,label,CrMo2,,,,,,8,1,1.0000,1.0000,1.0000
-Pruned CART,label,CrMo91,,,,,,6,3,0.0000,0.0000,
-Pruned tree classifier,label,all,,,,,,175,83,0.7239,0.7108,0.7474
-Pruned tree classifier,label,C-Mn,,,,,,161,79,0.7389,0.7342,0.7470
-Pruned tree classifier,label,CrMo2,,,,,,8,1,0.0000,0.0000,0.8750
-Pruned tree classifier,label,CrMo91,,,,,,6,3,0.4000,0.3333,0.5000
-Random forest,yield_strength_MPa,all,620,33.9452,47.4574,3.6183,6.7958,619,102,0.6282,0.4804,0.9062
-Random forest,yield_strength_MPa,C-Mn,552,32.0750,42.6728,2.3982,4.2487,552,102,0.6282,0.4804,0.8936
-Random forest,yield_strength_MPa,CrMo2,30,54.2073,79.7759,32.8913,42.9362,29,0,0.0000,0.0000,
-Random forest,yield_strength_MPa,CrMo91,38,45.1160,72.5966,21.2176,35.3699,38,0,0.0000,0.0000,
-Random forest,uts_MPa,all,596,29.5473,42.2959,3.0128,8.4125,595,198,0.6751,0.5404,0.8088
-Random forest,uts_MPa,C-Mn,531,27.8375,36.6414,0.8325,2.2551,531,198,0.6751,0.5404,0.7791
-Random forest,uts_MPa,CrMo2,34,48.5034,77.4532,29.6684,44.5610,33,0,0.0000,0.0000,
-Random forest,uts_MPa,CrMo91,31,38.0432,69.4048,17.9601,41.3262,31,0,0.0000,0.0000,
-Random forest,elongation_pct,all,558,1.9359,2.5053,0.1426,0.2068,557,48,0.5915,0.4375,0.9494
-Random forest,elongation_pct,C-Mn,497,1.9279,2.4822,0.1397,0.2093,497,37,0.6552,0.5135,0.9622
-Random forest,elongation_pct,CrMo2,30,2.4068,3.0863,0.7661,0.9834,29,5,0.0000,0.0000,
-Random forest,elongation_pct,CrMo91,31,1.6086,2.2319,0.7585,1.0560,31,6,0.5000,0.3333,0.8621
-Random forest,charpy_toughness_J,all,723,19.0877,28.3864,2.7894,4.6300,315,29,0.2632,0.1724,0.9216
-Random forest,charpy_toughness_J,C-Mn,613,15.7518,22.8096,1.5437,1.9926,269,24,0.1333,0.0833,0.9163
-Random forest,charpy_toughness_J,CrMo2,77,46.8548,56.9851,18.7614,17.9249,34,0,0.0000,0.0000,
-Random forest,charpy_toughness_J,CrMo91,33,16.2659,20.3090,4.9088,6.7708,12,5,0.7500,0.6000,0.7778
-Random forest,label,all,,,,,,175,83,0.7571,0.6386,0.7458
-Random forest,label,C-Mn,,,,,,161,79,0.7704,0.6582,0.7429
-Random forest,label,CrMo2,,,,,,8,1,0.0000,0.0000,
-Random forest,label,CrMo91,,,,,,6,3,0.5000,0.3333,0.6000
-Random forest classifier,label,all,,,,,,175,83,0.7500,0.6867,0.7547
-Random forest classifier,label,C-Mn,,,,,,161,79,0.7832,0.7089,0.7629
-Random forest classifier,label,CrMo2,,,,,,8,1,0.0000,0.0000,0.8571
-Random forest classifier,label,CrMo91,,,,,,6,3,0.2857,0.3333,0.0000
-SVM classifier,label,all,,,,,,175,83,0.8415,0.8313,0.8511
-SVM classifier,label,C-Mn,,,,,,161,79,0.8516,0.8354,0.8471
-SVM classifier,label,CrMo2,,,,,,8,1,0.6667,1.0000,1.0000
-SVM classifier,label,CrMo91,,,,,,6,3,0.6667,0.6667,0.6667
-k-NN classifier,label,all,,,,,,175,83,0.8000,0.8193,0.8295
-k-NN classifier,label,C-Mn,,,,,,161,79,0.8125,0.8228,0.8250
-k-NN classifier,label,CrMo2,,,,,,8,1,1.0000,1.0000,1.0000
-k-NN classifier,label,CrMo91,,,,,,6,3,0.5000,0.6667,0.0000
+model,target,family,n,MAE,RMSE,MAE_std,RMSE_std,n_clf,n_nc,F1_nc,recall_nc,accuracy,precision_good
+AdaBoost Tuned,yield_strength_MPa,all,620,43.7947,57.8942,3.2775,6.4912,619,102,0.0194,0.0098,,0.8366
+AdaBoost Tuned,yield_strength_MPa,C-Mn,552,42.0135,52.7686,2.6124,3.0954,552,102,0.0194,0.0098,,0.8167
+AdaBoost Tuned,yield_strength_MPa,CrMo2,30,53.3342,81.6422,30.7116,42.1123,29,0,0.0000,0.0000,,
+AdaBoost Tuned,yield_strength_MPa,CrMo91,38,62.1388,94.7376,33.8128,52.0527,38,0,0.0000,0.0000,,
+AdaBoost Tuned,uts_MPa,all,596,40.2143,51.4968,3.0389,6.8814,595,198,0.5793,0.4242,,0.7734
+AdaBoost Tuned,uts_MPa,C-Mn,531,39.1494,47.2316,1.5066,2.1237,531,198,0.5793,0.4242,,0.7403
+AdaBoost Tuned,uts_MPa,CrMo2,34,51.3430,78.8325,31.0420,38.5544,33,0,0.0000,0.0000,,
+AdaBoost Tuned,uts_MPa,CrMo91,31,46.2498,77.1846,16.2918,36.5053,31,0,0.0000,0.0000,,
+AdaBoost Tuned,elongation_pct,all,558,2.4142,3.0266,0.1302,0.1265,557,48,0.1818,0.1042,,0.9218
+AdaBoost Tuned,elongation_pct,C-Mn,497,2.4351,3.0453,0.1902,0.1950,497,37,0.1860,0.1081,,0.9328
+AdaBoost Tuned,elongation_pct,CrMo2,30,2.4993,3.2101,0.8125,1.0289,29,5,0.0000,0.0000,,
+AdaBoost Tuned,elongation_pct,CrMo91,31,1.9974,2.4975,0.5990,0.7916,31,6,0.2857,0.1667,,0.8333
+AdaBoost Tuned,charpy_toughness_J,all,723,27.3719,35.7354,3.2891,4.5335,315,29,0.0000,0.0000,,
+AdaBoost Tuned,charpy_toughness_J,C-Mn,613,24.4048,31.5417,2.3733,2.4551,269,24,0.0000,0.0000,,
+AdaBoost Tuned,charpy_toughness_J,CrMo2,77,51.3175,60.5842,17.7483,20.5043,34,0,0.0000,0.0000,,
+AdaBoost Tuned,charpy_toughness_J,CrMo91,33,26.6156,30.5505,4.1957,3.8530,12,5,0.0000,0.0000,,
+AdaBoost Tuned,label,all,,,,,,175,83,0.3061,0.1807,,0.5750
+AdaBoost Tuned,label,C-Mn,,,,,,161,79,0.3191,0.1899,,0.5616
+AdaBoost Tuned,label,CrMo2,,,,,,8,1,0.0000,0.0000,,
+AdaBoost Tuned,label,CrMo91,,,,,,6,3,0.0000,0.0000,,
+Bagging,yield_strength_MPa,all,620,35.2422,49.3999,3.7728,6.8220,619,102,0.6784,0.5686,,0.9200
+Bagging,yield_strength_MPa,C-Mn,552,33.4909,44.8853,2.2463,4.5715,552,102,0.6784,0.5686,,0.9089
+Bagging,yield_strength_MPa,CrMo2,30,55.3819,82.0406,35.4153,46.4081,29,0,0.0000,0.0000,,
+Bagging,yield_strength_MPa,CrMo91,38,44.7820,72.3640,21.9364,36.2268,38,0,0.0000,0.0000,,
+Bagging,uts_MPa,all,596,30.8574,44.4491,3.5159,8.4676,595,198,0.6728,0.5556,,0.8112
+Bagging,uts_MPa,C-Mn,531,29.2594,39.5995,1.5872,3.4520,531,198,0.6728,0.5556,,0.7811
+Bagging,uts_MPa,CrMo2,34,50.1333,77.4716,27.8672,41.7901,33,0,0.0000,0.0000,,
+Bagging,uts_MPa,CrMo91,31,37.0880,67.3932,19.0700,39.2626,31,0,0.0000,0.0000,,
+Bagging,elongation_pct,all,558,1.9483,2.5117,0.1471,0.2252,557,48,0.6234,0.5000,,0.9545
+Bagging,elongation_pct,C-Mn,497,1.9448,2.4974,0.1589,0.2448,497,37,0.6667,0.5676,,0.9660
+Bagging,elongation_pct,CrMo2,30,2.3674,3.0026,0.7101,0.9364,29,5,0.0000,0.0000,,
+Bagging,elongation_pct,CrMo91,31,1.5989,2.1988,0.7519,1.0277,31,6,0.6667,0.5000,,0.8929
+Bagging,charpy_toughness_J,all,723,19.1077,28.1598,2.8476,4.3602,315,29,0.1714,0.1034,,0.9159
+Bagging,charpy_toughness_J,C-Mn,613,16.0767,23.3378,1.8619,2.1904,269,24,0.2000,0.1250,,0.9202
+Bagging,charpy_toughness_J,CrMo2,77,44.4288,54.2131,15.8599,15.9174,34,0,0.0000,0.0000,,
+Bagging,charpy_toughness_J,CrMo91,33,16.3293,19.9560,4.3445,5.9733,12,5,0.0000,0.0000,,
+Bagging,label,all,,,,,,175,83,0.8108,0.7229,,0.7909
+Bagging,label,C-Mn,,,,,,161,79,0.8252,0.7468,,0.7938
+Bagging,label,CrMo2,,,,,,8,1,0.0000,0.0000,,
+Bagging,label,CrMo91,,,,,,6,3,0.5000,0.3333,,0.6000
+Baseline (mean),yield_strength_MPa,all,620,72.5700,94.4083,6.9118,8.3767,619,102,0.0000,0.0000,0.8352,0.8352
+Baseline (mean),yield_strength_MPa,C-Mn,552,68.2452,85.6669,7.3116,5.5879,552,102,0.0000,0.0000,0.8152,0.8152
+Baseline (mean),yield_strength_MPa,CrMo2,30,65.1537,94.5756,43.9168,50.2728,29,0,0.0000,0.0000,1.0000,1.0000
+Baseline (mean),yield_strength_MPa,CrMo91,38,141.2486,178.1962,50.2542,52.5219,38,0,0.0000,0.0000,1.0000,1.0000
+Baseline (mean),uts_MPa,all,596,73.4451,92.1934,6.5884,10.6579,595,198,0.0000,0.0000,0.6672,0.6672
+Baseline (mean),uts_MPa,C-Mn,531,68.1345,83.1294,6.9412,6.1473,531,198,0.0000,0.0000,0.6271,0.6271
+Baseline (mean),uts_MPa,CrMo2,34,80.8486,111.5326,47.3513,53.6145,33,0,0.0000,0.0000,1.0000,1.0000
+Baseline (mean),uts_MPa,CrMo91,31,156.2901,177.1968,25.7945,42.6028,31,0,0.0000,0.0000,1.0000,1.0000
+Baseline (mean),elongation_pct,all,558,4.0092,4.8459,0.2485,0.1951,557,48,0.0000,0.0000,0.9138,0.9138
+Baseline (mean),elongation_pct,C-Mn,497,3.7625,4.5522,0.2961,0.2388,497,37,0.0000,0.0000,0.9256,0.9256
+Baseline (mean),elongation_pct,CrMo2,30,5.1869,6.0118,0.7663,0.9592,29,5,0.0000,0.0000,0.8276,0.8276
+Baseline (mean),elongation_pct,CrMo91,31,6.8251,7.4483,1.5425,1.3851,31,6,0.0000,0.0000,0.8065,0.8065
+Baseline (mean),charpy_toughness_J,all,723,39.8898,51.7299,2.8294,3.8535,315,29,0.0000,0.0000,0.9079,0.9079
+Baseline (mean),charpy_toughness_J,C-Mn,613,35.7831,47.0677,0.8793,1.0816,269,24,0.0000,0.0000,0.9108,0.9108
+Baseline (mean),charpy_toughness_J,CrMo2,77,71.2623,80.3474,23.2901,22.4140,34,0,0.0000,0.0000,1.0000,1.0000
+Baseline (mean),charpy_toughness_J,CrMo91,33,42.9723,49.1209,6.4876,7.4411,12,5,0.0000,0.0000,0.5833,0.5833
+Baseline (mean),label,all,,,,,,175,83,0.0000,0.0000,0.5257,0.5257
+Baseline (mean),label,C-Mn,,,,,,161,79,0.0000,0.0000,0.5093,0.5093
+Baseline (mean),label,CrMo2,,,,,,8,1,0.0000,0.0000,0.8750,0.8750
+Baseline (mean),label,CrMo91,,,,,,6,3,0.0000,0.0000,0.5000,0.5000
+Extra-Trees,yield_strength_MPa,all,620,29.0767,42.4853,2.7953,7.6437,619,102,0.7811,0.6471,,0.9348
+Extra-Trees,yield_strength_MPa,C-Mn,552,27.0808,36.8705,1.6292,3.9476,552,102,0.7811,0.6471,,0.9258
+Extra-Trees,yield_strength_MPa,CrMo2,30,44.7174,75.6869,39.8741,50.9458,29,0,0.0000,0.0000,,1.0000
+Extra-Trees,yield_strength_MPa,CrMo91,38,45.7218,71.9717,18.5704,32.8402,38,0,0.0000,0.0000,,1.0000
+Extra-Trees,uts_MPa,all,596,25.2362,38.8386,3.2438,9.4624,595,198,0.7378,0.6111,,0.8344
+Extra-Trees,uts_MPa,C-Mn,531,23.1240,31.7839,1.7905,2.7847,531,198,0.7378,0.6111,,0.8080
+Extra-Trees,uts_MPa,CrMo2,34,45.7402,79.4896,34.5468,52.2833,33,0,0.0000,0.0000,,1.0000
+Extra-Trees,uts_MPa,CrMo91,31,38.9270,69.0419,18.4736,39.3577,31,0,0.0000,0.0000,,1.0000
+Extra-Trees,elongation_pct,all,558,1.7850,2.3563,0.1746,0.2593,557,48,0.7250,0.6042,,0.9638
+Extra-Trees,elongation_pct,C-Mn,497,1.7594,2.2856,0.1096,0.1240,497,37,0.7500,0.6486,,0.9723
+Extra-Trees,elongation_pct,CrMo2,30,2.5987,3.5836,0.9188,1.3828,29,5,0.0000,0.0000,,0.8276
+Extra-Trees,elongation_pct,CrMo91,31,1.4087,1.9383,0.6146,0.8204,31,6,0.9091,0.8333,,0.9615
+Extra-Trees,charpy_toughness_J,all,723,17.3670,27.7069,2.8468,5.0882,315,29,0.2703,0.1724,,0.9218
+Extra-Trees,charpy_toughness_J,C-Mn,613,13.8747,21.4484,0.6229,1.2438,269,24,0.0714,0.0417,,0.9132
+Extra-Trees,charpy_toughness_J,CrMo2,77,46.3021,58.0455,24.5285,22.4154,34,0,0.0000,0.0000,,1.0000
+Extra-Trees,charpy_toughness_J,CrMo91,33,14.7232,20.2962,8.5512,10.0240,12,5,0.8889,0.8000,,0.8750
+Extra-Trees,label,all,,,,,,175,83,0.8392,0.7229,,0.8000
+Extra-Trees,label,C-Mn,,,,,,161,79,0.8467,0.7342,,0.7961
+Extra-Trees,label,CrMo2,,,,,,8,1,0.0000,0.0000,,0.8750
+Extra-Trees,label,CrMo91,,,,,,6,3,0.8000,0.6667,,0.7500
+Gradient Boosting Tuned,yield_strength_MPa,all,620,28.6248,41.5338,2.2545,6.4211,619,102,0.8043,0.7255,,0.9479
+Gradient Boosting Tuned,yield_strength_MPa,C-Mn,552,26.8937,37.4683,0.9620,3.0697,552,102,0.8043,0.7255,,0.9404
+Gradient Boosting Tuned,yield_strength_MPa,CrMo2,30,45.7327,71.3274,27.0977,33.8383,29,0,0.0000,0.0000,,1.0000
+Gradient Boosting Tuned,yield_strength_MPa,CrMo91,38,40.2658,61.1232,19.6650,31.5820,38,0,0.0000,0.0000,,1.0000
+Gradient Boosting Tuned,uts_MPa,all,596,25.2797,40.8284,4.2293,10.7642,595,198,0.7630,0.6667,,0.8523
+Gradient Boosting Tuned,uts_MPa,C-Mn,531,23.2244,33.3152,2.3026,4.5677,531,198,0.7630,0.6667,,0.8277
+Gradient Boosting Tuned,uts_MPa,CrMo2,34,40.7059,77.4275,30.8488,47.9498,33,0,0.0000,0.0000,,1.0000
+Gradient Boosting Tuned,uts_MPa,CrMo91,31,43.5652,80.3858,26.9601,49.3996,31,0,0.0000,0.0000,,1.0000
+Gradient Boosting Tuned,elongation_pct,all,558,1.9512,2.5538,0.2085,0.2453,557,48,0.5854,0.5000,,0.9541
+Gradient Boosting Tuned,elongation_pct,C-Mn,497,1.9367,2.5282,0.2156,0.2604,497,37,0.6061,0.5405,,0.9637
+Gradient Boosting Tuned,elongation_pct,CrMo2,30,2.5411,3.2637,0.6776,0.9551,29,5,0.0000,0.0000,,0.8276
+Gradient Boosting Tuned,elongation_pct,CrMo91,31,1.6140,2.1471,0.7549,0.9491,31,6,0.7273,0.6667,,0.9231
+Gradient Boosting Tuned,charpy_toughness_J,all,723,19.6093,28.7862,3.3133,5.3998,315,29,0.3000,0.2069,,0.9243
+Gradient Boosting Tuned,charpy_toughness_J,C-Mn,613,16.2422,22.9406,2.0101,2.3844,269,24,0.1379,0.0833,,0.9167
+Gradient Boosting Tuned,charpy_toughness_J,CrMo2,77,47.3240,57.7146,22.1264,20.4591,34,0,0.0000,0.0000,,1.0000
+Gradient Boosting Tuned,charpy_toughness_J,CrMo91,33,17.4872,24.6327,8.4484,11.0538,12,5,0.8889,0.8000,,0.8750
+Gradient Boosting Tuned,label,all,,,,,,175,83,0.8590,0.8072,,0.8431
+Gradient Boosting Tuned,label,C-Mn,,,,,,161,79,0.8649,0.8101,,0.8370
+Gradient Boosting Tuned,label,CrMo2,,,,,,8,1,1.0000,1.0000,1.0000,
+Gradient Boosting Tuned,label,CrMo91,,,,,,6,3,0.6667,0.6667,0.6667,
+HistGradientBoosting Tuned,yield_strength_MPa,all,620,30.8290,45.1285,3.9886,8.0586,619,102,0.7872,0.7255,,0.9475
+HistGradientBoosting Tuned,yield_strength_MPa,C-Mn,552,27.9401,38.1574,2.1170,3.1824,552,102,0.7872,0.7255,,0.9399
+HistGradientBoosting Tuned,yield_strength_MPa,CrMo2,30,52.3971,76.5764,37.2567,41.5372,29,0,0.0000,0.0000,,
+HistGradientBoosting Tuned,yield_strength_MPa,CrMo91,38,55.7656,86.3072,29.0354,42.8665,38,0,0.0000,0.0000,,
+HistGradientBoosting Tuned,uts_MPa,all,596,26.5784,40.1272,3.1742,8.6362,595,198,0.7701,0.7020,,0.8634
+HistGradientBoosting Tuned,uts_MPa,C-Mn,531,24.6698,33.3418,1.3549,2.3037,531,198,0.7701,0.7020,,0.8397
+HistGradientBoosting Tuned,uts_MPa,CrMo2,34,45.1474,73.9712,29.9100,42.1268,33,0,0.0000,0.0000,,
+HistGradientBoosting Tuned,uts_MPa,CrMo91,31,38.9054,76.9033,17.1289,44.7573,31,0,0.0000,0.0000,,
+HistGradientBoosting Tuned,elongation_pct,all,558,1.9277,2.5122,0.1474,0.2084,557,48,0.5897,0.4792,,0.9526
+HistGradientBoosting Tuned,elongation_pct,C-Mn,497,1.9126,2.4873,0.1651,0.2353,497,37,0.6562,0.5676,,0.9660
+HistGradientBoosting Tuned,elongation_pct,CrMo2,30,2.6213,3.2125,0.5544,0.6154,29,5,0.0000,0.0000,,
+HistGradientBoosting Tuned,elongation_pct,CrMo91,31,1.4987,2.1034,0.5861,0.9059,31,6,0.4444,0.3333,,0.8571
+HistGradientBoosting Tuned,charpy_toughness_J,all,723,18.4703,27.5908,2.8453,5.4091,315,29,0.5333,0.4138,,0.9431
+HistGradientBoosting Tuned,charpy_toughness_J,C-Mn,613,15.3988,21.8950,1.3990,2.1211,269,24,0.4865,0.3750,,0.9414
+HistGradientBoosting Tuned,charpy_toughness_J,CrMo2,77,44.3325,55.7299,22.5990,21.0655,34,0,0.0000,0.0000,,
+HistGradientBoosting Tuned,charpy_toughness_J,CrMo91,33,15.1817,22.9426,10.2525,15.1889,12,5,0.7500,0.6000,,0.7778
+HistGradientBoosting Tuned,label,all,,,,,,175,83,0.8302,0.7952,,0.8283
+HistGradientBoosting Tuned,label,C-Mn,,,,,,161,79,0.8571,0.8354,,0.8488
+HistGradientBoosting Tuned,label,CrMo2,,,,,,8,1,0.0000,0.0000,,
+HistGradientBoosting Tuned,label,CrMo91,,,,,,6,3,0.0000,0.0000,,
+Naive Bayes classifier,label,all,,,,,,175,83,0.6994,0.6867,,0.7263
+Naive Bayes classifier,label,C-Mn,,,,,,161,79,0.7143,0.6962,,0.7209
+Naive Bayes classifier,label,CrMo2,,,,,,8,1,0.0000,0.0000,,0.8750
+Naive Bayes classifier,label,CrMo91,,,,,,6,3,0.5000,0.6667,,0.0000
+Pruned CART,yield_strength_MPa,all,620,48.2375,66.2208,5.3795,8.9208,619,102,0.5951,0.5980,,0.9205
+Pruned CART,yield_strength_MPa,C-Mn,552,46.6474,63.2966,5.6317,8.1769,552,102,0.5951,0.5980,,0.9087
+Pruned CART,yield_strength_MPa,CrMo2,30,93.1194,112.0610,33.7187,39.8285,29,0,0.0000,0.0000,,
+Pruned CART,yield_strength_MPa,CrMo91,38,35.9033,58.6072,17.8872,27.5261,38,0,0.0000,0.0000,,
+Pruned CART,uts_MPa,all,596,41.7850,59.9737,5.5654,9.9831,595,198,0.6394,0.6313,,0.8184
+Pruned CART,uts_MPa,C-Mn,531,40.3095,55.7337,5.5728,7.8749,531,198,0.6394,0.6313,,0.7840
+Pruned CART,uts_MPa,CrMo2,34,61.3745,93.0490,30.7590,43.7041,33,0,0.0000,0.0000,,
+Pruned CART,uts_MPa,CrMo91,31,45.5747,80.3072,21.6355,41.7402,31,0,0.0000,0.0000,,
+Pruned CART,elongation_pct,all,558,2.6030,3.3217,0.1122,0.1822,557,48,0.4615,0.5000,,0.9521
+Pruned CART,elongation_pct,C-Mn,497,2.6051,3.3347,0.1370,0.2100,497,37,0.5055,0.6216,,0.9684
+Pruned CART,elongation_pct,CrMo2,30,2.6603,3.1742,0.5563,0.6157,29,5,0.0000,0.0000,,
+Pruned CART,elongation_pct,CrMo91,31,2.5144,3.2511,0.7831,1.2148,31,6,0.2500,0.1667,,0.8276
+Pruned CART,charpy_toughness_J,all,723,18.8707,32.4594,3.5619,5.8135,315,29,0.5217,0.6207,,0.9600
+Pruned CART,charpy_toughness_J,C-Mn,613,16.1793,29.5696,2.3750,3.8581,269,24,0.5455,0.6250,,0.9622
+Pruned CART,charpy_toughness_J,CrMo2,77,40.8082,52.0980,14.4951,17.2943,34,0,0.0000,0.0000,,
+Pruned CART,charpy_toughness_J,CrMo91,33,17.6779,22.5528,4.2675,6.1452,12,5,0.6000,0.6000,,0.7143
+Pruned CART,label,all,,,,,,175,83,0.7657,0.8072,0.8072,
+Pruned CART,label,C-Mn,,,,,,161,79,0.7811,0.8354,,0.8169
+Pruned CART,label,CrMo2,,,,,,8,1,1.0000,1.0000,1.0000,
+Pruned CART,label,CrMo91,,,,,,6,3,0.0000,0.0000,,
+Pruned tree classifier,label,all,,,,,,175,83,0.7239,0.7108,,0.7474
+Pruned tree classifier,label,C-Mn,,,,,,161,79,0.7389,0.7342,,0.7470
+Pruned tree classifier,label,CrMo2,,,,,,8,1,0.0000,0.0000,,0.8750
+Pruned tree classifier,label,CrMo91,,,,,,6,3,0.4000,0.3333,,0.5000
+Random forest,yield_strength_MPa,all,620,33.9452,47.4574,3.6183,6.7958,619,102,0.6282,0.4804,,0.9062
+Random forest,yield_strength_MPa,C-Mn,552,32.0750,42.6728,2.3982,4.2487,552,102,0.6282,0.4804,,0.8936
+Random forest,yield_strength_MPa,CrMo2,30,54.2073,79.7759,32.8913,42.9362,29,0,0.0000,0.0000,,
+Random forest,yield_strength_MPa,CrMo91,38,45.1160,72.5966,21.2176,35.3699,38,0,0.0000,0.0000,,
+Random forest,uts_MPa,all,596,29.5473,42.2959,3.0128,8.4125,595,198,0.6751,0.5404,,0.8088
+Random forest,uts_MPa,C-Mn,531,27.8375,36.6414,0.8325,2.2551,531,198,0.6751,0.5404,,0.7791
+Random forest,uts_MPa,CrMo2,34,48.5034,77.4532,29.6684,44.5610,33,0,0.0000,0.0000,,
+Random forest,uts_MPa,CrMo91,31,38.0432,69.4048,17.9601,41.3262,31,0,0.0000,0.0000,,
+Random forest,elongation_pct,all,558,1.9359,2.5053,0.1426,0.2068,557,48,0.5915,0.4375,,0.9494
+Random forest,elongation_pct,C-Mn,497,1.9279,2.4822,0.1397,0.2093,497,37,0.6552,0.5135,,0.9622
+Random forest,elongation_pct,CrMo2,30,2.4068,3.0863,0.7661,0.9834,29,5,0.0000,0.0000,,
+Random forest,elongation_pct,CrMo91,31,1.6086,2.2319,0.7585,1.0560,31,6,0.5000,0.3333,,0.8621
+Random forest,charpy_toughness_J,all,723,19.0877,28.3864,2.7894,4.6300,315,29,0.2632,0.1724,,0.9216
+Random forest,charpy_toughness_J,C-Mn,613,15.7518,22.8096,1.5437,1.9926,269,24,0.1333,0.0833,,0.9163
+Random forest,charpy_toughness_J,CrMo2,77,46.8548,56.9851,18.7614,17.9249,34,0,0.0000,0.0000,,
+Random forest,charpy_toughness_J,CrMo91,33,16.2659,20.3090,4.9088,6.7708,12,5,0.7500,0.6000,,0.7778
+Random forest,label,all,,,,,,175,83,0.7571,0.6386,,0.7458
+Random forest,label,C-Mn,,,,,,161,79,0.7704,0.6582,,0.7429
+Random forest,label,CrMo2,,,,,,8,1,0.0000,0.0000,,
+Random forest,label,CrMo91,,,,,,6,3,0.5000,0.3333,,0.6000
+Random forest classifier,label,all,,,,,,175,83,0.7500,0.6867,,0.7547
+Random forest classifier,label,C-Mn,,,,,,161,79,0.7832,0.7089,,0.7629
+Random forest classifier,label,CrMo2,,,,,,8,1,0.0000,0.0000,,0.8571
+Random forest classifier,label,CrMo91,,,,,,6,3,0.2857,0.3333,,0.0000
+SVM classifier,label,all,,,,,,175,83,0.8415,0.8313,,0.8511
+SVM classifier,label,C-Mn,,,,,,161,79,0.8516,0.8354,,0.8471
+SVM classifier,label,CrMo2,,,,,,8,1,0.6667,1.0000,1.0000,
+SVM classifier,label,CrMo91,,,,,,6,3,0.6667,0.6667,0.6667,
+k-NN classifier,label,all,,,,,,175,83,0.8000,0.8193,,0.8295
+k-NN classifier,label,C-Mn,,,,,,161,79,0.8125,0.8228,,0.8250
+k-NN classifier,label,CrMo2,,,,,,8,1,1.0000,1.0000,1.0000,
+k-NN classifier,label,CrMo91,,,,,,6,3,0.5000,0.6667,,0.0000
