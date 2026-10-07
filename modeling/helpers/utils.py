@@ -7,8 +7,9 @@ can be compared in one table (results.csv):
 - the inputs are standardised inside a Pipeline (StandardScaler + model);
 - 5-fold cross-validation grouped on input_group and stratified on the alloy
   family, with the same folds for every target and every person;
-- MAE and RMSE per target, then F1 and recall on the non-conforming welds once
-  the thresholds of definition_bonne_soudure.md are applied to the predictions.
+- MAE and RMSE per target, then F1 and recall on the non-conforming welds, and
+  the accuracy, once the thresholds of definition_bonne_soudure.md are applied to
+  the predictions.
 
 The direct classifiers of the label (1D notebooks) are trained on the labelled
 weld deposits, one row per deposit, with the same folds, and give the same
@@ -19,7 +20,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.base import clone
-from sklearn.metrics import f1_score, recall_score
+from sklearn.metrics import accuracy_score, f1_score, recall_score
 from sklearn.model_selection import PredefinedSplit, StratifiedGroupKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -64,7 +65,7 @@ THRESHOLDS = pd.DataFrame(
 
 # CrMo9 (no row in train, 1 row in the whole data) only counts in the "all" rows of the results.
 REPORT_FAMILIES = ["all", "C-Mn", "CrMo2", "CrMo91"]
-RESULT_COLS = ["model", "target", "family", "n", "MAE", "RMSE", "MAE_std", "RMSE_std", "n_clf", "n_nc", "F1_nc", "recall_nc"]
+RESULT_COLS = ["model", "target", "family", "n", "MAE", "RMSE", "MAE_std", "RMSE_std", "n_clf", "n_nc", "F1_nc", "recall_nc", "accuracy"]
 
 
 def add_family(df):
@@ -223,12 +224,13 @@ def _regression_metrics(y, pred, fold):
 
 def _classification_metrics(true_nc, pred_nc):
     if len(true_nc) == 0:
-        return {"n_clf": 0, "n_nc": 0, "F1_nc": np.nan, "recall_nc": np.nan}
+        return {"n_clf": 0, "n_nc": 0, "F1_nc": np.nan, "recall_nc": np.nan, "accuracy": np.nan}
     return {
         "n_clf": len(true_nc),
         "n_nc": int(true_nc.sum()),
         "F1_nc": f1_score(true_nc, pred_nc, zero_division=0),
         "recall_nc": recall_score(true_nc, pred_nc, zero_division=0),
+        "accuracy": accuracy_score(true_nc, pred_nc),
     }
 
 
@@ -245,9 +247,9 @@ def evaluate(name, models, df):
     One row per target and family:
     - n, MAE, RMSE: out-of-fold predictions on the rows where the target is known,
       MAE_std and RMSE_std are the standard deviations over the 5 folds;
-    - n_clf, n_nc, F1_nc, recall_nc: the criterion of this target, on the rows
-      where it is decided (n_clf rows, n_nc of them non-conforming), with
-      "non-conforming" as the positive class.
+    - n_clf, n_nc, F1_nc, recall_nc, accuracy: the criterion of this target, on
+      the rows where it is decided (n_clf rows, n_nc of them non-conforming), with
+      "non-conforming" as the positive class for F1 and recall.
     When the 4 targets are given, the rows with target = "label" give the same
     classification metrics for the full label, on the labelled weld deposits.
     """
@@ -362,7 +364,7 @@ def evaluate_label(name, model, df):
     """Cross-validate a classifier of the label and return its rows of the results table.
 
     The same rows as the "label" rows of evaluate: F1 and recall on the non-conforming
-    deposits, on all the labelled deposits and per family. The regression columns are empty.
+    deposits and accuracy, on all the labelled deposits and per family. The regression columns are empty.
     """
     data = deposit_data(df)
     pred = oof_predict_label(model, df)
