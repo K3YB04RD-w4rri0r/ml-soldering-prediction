@@ -124,6 +124,25 @@ The methodology above is coded once in [helpers/utils.py](modeling/helpers/utils
 - **Reference F1:** A rule that called every weld bad had an F1 of 0.64 (83 bad welds out of 175). A useful model had to be above it.
 - **Reference precision on good:** The baseline accepted every weld, so its precision on good was the share of good welds, 0.53. A useful model had to be above it.
 
+## Linear Models ([1A_linear_models](modeling/1A_linear_models/))
+
+We fitted three linear models per target, one notebook each (`1A1` to `1A3`): the OLS, a stepwise selection (forward and backward, the number of inputs chosen on the validation MAE) and a PCR (the number of components chosen the same way).
+
+| Model | MAE yield (MPa) | MAE UTS (MPa) | MAE elongation (%) | MAE Charpy (J) | Label F1 | Label recall | Label precision on good |
+|---|---|---|---|---|---|---|---|
+| Baseline (mean) | 72.6 | 73.5 | 4.01 | 39.9 | 0.00 | 0.00 | 0.53 |
+| Linear regression | 52.0 | 45.1 | 2.79 | 30.4 | 0.52 | 0.39 | 0.62 |
+| Forward | 50.3 | 42.4 | 2.72 | 25.1 | 0.58 | 0.43 | 0.65 |
+| Backward | 50.3 | 42.3 | 2.69 | 25.3 | 0.59 | 0.45 | 0.65 |
+| PCR | 51.8 | 44.6 | 2.78 | 30.4 | 0.53 | 0.40 | not computed |
+| Pruned CART | 48.2 | 41.8 | 2.60 | 18.9 | 0.77 | 0.81 | 0.81 |
+| Extra-Trees | 29.1 | 25.2 | 1.78 | 17.4 | 0.84 | 0.72 | 0.80 |
+
+- **Best model:** The stepwise models were the best linear ones. On Charpy they lowered the MAE by 17% (25.1 J against 30.4 J) and removed the large errors of the OLS (RMSE from 58.5 J to 32.0 J). On the tensile targets the gain (2% to 6%) was within the spread between folds. We chose the inputs on the same folds as the score, so these MAE are a little optimistic.
+- **PCR:** It kept 23 to 28 of the 30 components and gave the OLS result (identical on Charpy). The inputs do not compress, as the EDA showed.
+- **Label:** No linear model beat the F1 of the rule that calls every weld bad (0.64), and they caught only 39% to 45% of the bad welds. On Charpy, the stepwise models kept a recall of 0.52 to 0.62, against 0.10 to 0.17 for the tree ensembles.
+- **Cr-Mo welds:** The errors were much higher than on C-Mn (OLS yield MAE: 84.5 MPa on CrMo2, 48.0 MPa on C-Mn). The per-family label metrics rely on 8 and 6 rows, so we did not use them.
+
 ## Trees and Ensembles ([1B_trees_ensembles.ipynb](modeling/1B_trees_ensembles/1B_trees_ensembles.ipynb))
 
 We tuned four tree models per target with a grid search on the same folds, one notebook each (`1B1` to `1B4`). The ensembles used 200 trees.
@@ -140,6 +159,25 @@ We tuned four tree models per target with a grid search on the same folds, one n
 - **Averaging:** The largest gain came from the pruned tree to the bagging (-25% to -27% on the tensile targets). Averaging many trees removed most of the variance of a single tree.
 - **Charpy:** The ensembles missed most non-conforming Charpy rows (recall of 0.10 to 0.17, against 0.62 for the pruned tree). The mean of 200 trees rarely fell below the 47 J threshold.
 - **Cr-Mo welds:** Every model was much worse on Cr-Mo than on C-Mn (Extra-Trees yield MAE: 44.7 MPa on CrMo2, 27.1 MPa on C-Mn). The per-family label metrics rely on 8 and 6 rows, so we did not use them to compare the models.
+
+## k-NN, Bayesian Models and SVM (1C)
+
+We tested three more families of regressions, one notebook each (`1C1` to `1C3`): the k-NN, two Bayesian models (a Bayesian Ridge and a Naive Bayes written as a regressor) and the SVR. They predict the four properties and the family thresholds give the label, unlike the direct classifiers of `1D`. We tuned the hyperparameters by grid search on the same folds.
+
+| Model | MAE yield (MPa) | MAE UTS (MPa) | MAE elongation (%) | MAE Charpy (J) | Label F1 | Label recall | Label precision on good |
+|---|---|---|---|---|---|---|---|
+| Baseline (mean) | 72.6 | 73.5 | 4.01 | 39.9 | 0.00 | 0.00 | 0.53 |
+| Bayesian Ridge | 51.9 | 44.6 | 2.79 | 30.3 | 0.52 | 0.37 | 0.62 |
+| Naive Bayes | 60.6 | 50.1 | 3.21 | 33.7 | 0.64 | 0.71 | 0.68 |
+| k-NN (k = 1 or 2) | 39.5 | 34.0 | 2.16 | 18.0 | 0.78 | 0.77 | 0.80 |
+| SVM (`rbf`, `C` = 100) | 33.0 | 27.4 | 1.83 | 22.0 | 0.73 | 0.58 | 0.72 |
+| Extra-Trees | 29.1 | 25.2 | 1.78 | 17.4 | 0.84 | 0.72 | 0.80 |
+
+- **Best models:** The SVM had the lowest MAE on the tensile targets (54% to 63% below the baseline, better than the bagging and the random forest). The k-NN had the lowest Charpy MAE and the best label F1 of `1C`. None beat the Extra-Trees.
+- **k-NN:** The best *k* was 1 or 2, with a training MAE near 0 against 18 J on the validation folds. The closest weld predicted best. Its recall on non-conforming Charpy rows (0.86) was the highest of all models. Near-identical welds in different folds may flatter the score (not tested).
+- **Bayesian models:** The Bayesian Ridge gave the OLS result (within 0.5 MPa): with 558 to 723 rows for 30 inputs, the prior has little weight. The Naive Bayes was the weakest: its F1 (0.64) equals the rule that calls every weld bad, with 42 false alarms.
+- **SVM:** `rbf` with `C` = 100, the edge of the grid, won on all four targets, so a larger `C` was not tried. Its recall (0.58) was low, with one false alarm. As a direct classifier in `1D`, it reached an F1 of 0.84.
+- **Limits:** Every model was worse on Cr-Mo than on C-Mn (8 and 6 labelled welds, so no per-family label metrics). The scores are optimistic because we tuned on the evaluation folds. In `1D`, nesting lowered the k-NN F1 by 0.05.
 
 ## Direct Classification ([1D_direct_classification.ipynb](modeling/1D_direct_classification/1D_direct_classification.ipynb))
 
