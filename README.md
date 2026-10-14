@@ -273,6 +273,25 @@ Many rows of the train set have no label or no target value. Semi-supervised lea
 - **Conclusion:** Self-training did not improve the regressions. The rows without a value were too far from the labelled rows for the pseudo-labels to add information.
 
 
+## Boosting ([3_boosting.ipynb](modeling/3_boosting.ipynb))
+We tested three boosting methods on the four regression targets:
+- Gradient Boosting
+- AdaBoost
+- HistGradientBoosting
+The models were evaluated with the same 5-fold grouped cross-validation protocol as the other supervised models. Hyperparameters were selected separately for each target.
+Model	MAE yield (MPa)	MAE UTS (MPa)	MAE elongation (%)	MAE Charpy (J)	Label F1	Label recall	Label precision on good
+AdaBoost	worse overall	worse overall	worse overall	worse overall	0.31	0.18	0.58
+HistGradientBoosting	30.8	26.6	1.93	18.5	0.83	0.80	0.83
+Gradient Boosting	28.6	25.3	1.95	19.6	0.86	0.81	0.84
+Extra-Trees	29.1	25.2	1.78	17.4	0.84	0.72	0.80
+
+
+- Gradient Boosting: Best boosting model overall. It achieved the best yield-strength MAE and the best final label F1 among the regression-based approaches.
+- HistGradientBoosting: Competitive with Gradient Boosting and slightly better for elongation and Charpy than Gradient Boosting, but weaker on the final conformity label.
+- AdaBoost: Clearly weaker than the other boosting methods and was not retained.
+- Comparison with Extra-Trees: Extra-Trees remained the strongest overall model for the numerical mechanical-property predictions, while Gradient Boosting was stronger for the final conformity decision.
+
+
 ## Final Model Synthesis ([4_synthesis.ipynb](modeling/4_synthesis.ipynb))
 Main conclusions:
 - Extra-Trees gives the strongest overall regression performance for the mechanical properties.
